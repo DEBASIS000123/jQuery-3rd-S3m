@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="C:\Users\hp\Desktop\HTML\jQueryFile\jquery-3.7.1.js">
+    </script>
+    <style>
+        
+    </style>
+    <script>
+        $(document).ready(function(){
+            $("#div1").on({
+                click:function(){
+                    $(this).css("background-color","blue");
+                },
+                mouseenter:function(){
+                    $(this).css("background-color","green");
+                },
+                mouseleave:function(){
+                    $(this).css("background-color","black");
+                }
+            });
+        });
+
+        $(document).ready(function(){
+            $("#button1").click(function(){
+                $("#div2").fadeTo(2000,0.4);
+            });
+            $("#button2").click(function(){
+                $("#div2").fadeIn("slow");
+            });
+        });
+
+        $(document).ready(function(){
+            $("#button3").click(function(){
+                $("#div3").animate({
+                   opacity:'0.3',
+                   height:'200px', 
+                   width:'500px'
+                },4000);
+            });
+            $("#button4").click(function(){
+                $("#div3").stop();
+            });
+        });
+
+        $(document).ready(function(){
+            $("#button5").click(function(){
+                $("#div4").css("background-color","green").slideUp(2000);
+            });
+        });
+
+        $(document).ready(function(){
+            $("#button6").click(function(){
+                var al=$("#div5").text();
+                alert(al);
+            });
+            $("#button7").click(function(){
+                var alr=$("#div5").html("<h1>heading<h1>");
+                alert(alr);
+            });
+        });
+
+        $(document).ready(function(){
+            $("#button8").click(function(){
+            var value=$("#input1").val("Debasis Mishra");
+            alert(value);
+        });
+        });
+
+        $(document).ready(function(){
+            $("#button9").click(function(){
+            var value=$("#link1").attr("href");
+            alert(value);
+        });
+        $("#button10").click(function(){
+            var value=$("#link1").attr("class");
+            alert(value);
+        });
+        });
+
+        $(document).ready(function(){
+            $("#list2").append("<li>yellow</li>");
+        });
+    </script>
+</head>
+<body>
+    <h1>Using CSS</h1>
+    <div id="div1" style="background-color: red; height:100px; width:100px"></div>
+    <br><hr>
+
+    <h1>FadeTo FadeIn</h1>
+    <div id="div2" style="background-color:blue; height:100px;width:1100px;display:none;"></div>
+    <button id="button1">FadeTo</button>
+    <button id="button2">FadeIn</button>
+    <br><hr>
+
+    <h1>animate</h1>
+    <div id="div3" style="background-color:rgb(43, 193, 98); height:100px;width:1100px;"></div>
+    <button id="button3">animate</button>
+    <button id="button4">stop</button>
+    <br><hr>
+
+    <h1>slideUp</h1>
+    <div id="div4" style="background-color: rgb(0, 242, 255); height:100px; width:100px"></div>
+    <button id="button5">slideUp</button>
+    <br><hr>
+
+    <h1>Alert text& html</h1>
+    <div id="div5" style="background-color: rgb(42, 69, 70); height:100px; width:100px">hii</div>
+    <button id="button6">alert text</button>
+    <button id="button7">alert html</button>
+    <br><hr>
+
+    <h1>input value</h1>
+    <input type="text" id="input1">
+    <button id="button8">alert</button>
+    <br><hr>
+
+    <h1>attribute</h1>
+    <a href="#" id="link1" class="class1">link</a>
+    <button id="button9">alert link</button>
+    <button id="button10">alert class</button>
+    <br><hr>
+
+    <h1>append prepend after</h1>
+    <ul id="list2">
+        <!--prepend-->
+        <li>red</li>
+        <li>green</li>
+        <li>black</li>
+        <!--append-->
+    </ul>
+    <!--after-->
+    <br><hr>
+</body>
+</html>
