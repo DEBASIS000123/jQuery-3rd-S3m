@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="C:\Users\hp\Desktop\HTML\jQueryFile\jquery-3.7.1.js">
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#button1").click(function() {
+            $(".a1").hide();
+            });
+        });
+        $(document).ready(function(){
+            $("#button2").click(function(){
+                $(".a1").show();
+            });
+        });
+        $(document).ready(function(){
+            $("#button3").click(function(){
+                $(".a2").toggle();
+            });
+        });
+
+        $(document).ready(function(){
+            // $(".a3").mouseenter(function(){
+            //     alert("Mouse entered to the text.");
+            // })
+            // $(".a4").mouseleave(function(){
+            //     alert("Crusor removerd.");
+            // });
+        });
+
+        $(document).ready(function(){
+            $("#button4").click(function(){
+                 $("#div1").fadeIn(3000);
+                 $("#div2").fadeIn(4000);
+                 $("#div3").fadeIn(5000);
+            });
+        });
+
+        $(document).ready(function(){
+            $("#div4").click(function(){
+                $("#div5").slideDown(3000);
+            });
+        });
+
+        $(document).ready(function(){
+            $("#div6").click(function(){
+                $("#div7").slideToggle("fast");
+            });
+        });
+
+        $(document).ready(function(){
+            $("#button5").click(function(){
+                $("#div8").animate({
+                    left:500,
+                    opacity: '0.5',
+                    height: '100px',
+                    width: '100px'
+                });
+            });
+        });
+
+        $(document).ready(function(){
+            $("#button6").click(function(){
+                $("#div9").animate({
+                    height: 'toggle'
+                });
+            });
+        });
+
+        $(document).ready(function(){
+            $("#button7").click(function(){
+                var anam=$("#div10");
+                anam.animate({height: '50px', opacity: '0.3'}, "slow");
+                anam.animate({width: '300px', opacity: '0.7'}, "fast");
+                anam.animate({height: '100px', opacity: '0.3'}, "fast");
+                anam.animate({width: '300px', opacity: '0.7'}, "slow");
+            });
+        });
+
+        $(document).ready(function(){
+            $("#div11").click(function(){
+                $("#div12").slideDown(2000);
+            });
+            $("#button8").click(function(){
+                $("#div12").stop();
+            });
+        });
+
+        $(document).ready(function(){
+           $("#button9").click(function(){
+                $("#head").hide(3000,function(){
+                    alert("Paragraph is hidden.")
+                });
+           });
+        });
+    </script>
+    <style>
+        #div11, #div12 {
+        padding: 3px;
+        font-size: 50px;
+        text-align: left;
+        background-color: green;
+        color: black;
+        border: 2px solid #666;
+    }       
+    #div12 {
+        padding: 20px;
+        display: none;
+    }
+    </style>
+</head>
+<body>
+    <h1>Hide And Show</h1>
+    <button id="button1">Hide</button>
+    <button id="button2">Show</button>
+    <p class="a1" style="color:red; font-size: 1.2rem;">It will be hide and show after click hide and show button.</p>
+    <br><hr>
+
+    <h1>Toggle Hidden</h1>
+    <button id="button3">click</button>
+    <p class="a2" style="color:red; font-size: 1.2rem;">It will be hide and show after click button.</p>
+    <br><hr>
+   
+    <h1>Mouse Enter & Mouse leave</h1>
+    <p class="a3">Take the cursor to Here.</p>
+    <p class="a4">The out crussor from here.</p>
+    <br><hr>
+
+    <h1>FadeIn</h1>
+    <button id="button4">Hit the button to get the fading effect.</button><br><br>
+    <div style="display:flex">
+    <div id="div1" style="width:40px;height:60px;display:none;background-color:black;margin-right: 10px;">
+    </div><br>
+    <div id="div2" style="width:40px;height:60px;display:none;background-color:red;margin-right: 10px;">
+    </div><br>
+    <div id="div3" style="width:40px;height:60px;display:none;background-color:blue;margin-right: 10px;">
+    </div>
+    </div>
+    <br><hr>
+
+    <h1>SlideDown</h1>
+    <div id="div4" style="padding:5px,25px; text-align: center; background-color: blueviolet;color:white;border:2px solid red;">When this area is clicked, a panel emerges.</div>
+    <div id="div5" style="display:none;padding: 50px;text-align:center; background-color: blueviolet; color:white;border :2px solid red">
+        The panel greets the user with Merry Christmas!</div>
+    <br><hr>
+
+    <h1>slideToggle</h1>
+    <div id="div6" style="padding:5px,25px; text-align: center; background-color:aqua;color:red;border:2px solid red;">When this area is clicked, a panel emerges.</div>
+    <div id="div7" style="display:none;padding: 50px;text-align:center; background-color: aqua; color:red;border :2px solid red">
+        The panel greets the user with Merry Christmas!</div>
+    <br><hr>
+
+    <h1>Animation</h1>
+    <button id="button5">Move the box!</button>
+    <p></p>
+	 <div id="div8" style="background-color:dodgerblue;height:50px;width:50px;"></div>
+     <br><hr>
+`   
+    <h1>Toggle Animation</h1>
+    <button id="button6">Toggle the box!</button>
+    <p></p>
+	 <div id="div9" style="background-color:blue;height:50px;width:50px;"></div>
+     <br><hr>
+     <button id="button7">Toggle the box!</button>
+    <p></p>
+	 <div id="div10" style="background-color:blueviolet;height:50px;width:50px;"></div>
+     <br><hr>
+
+     <h1>pause slide</h1>
+     <button id="button8">Pause the sliding effect</button>
+	 <div id="div11">Click this area for sliding down the panel.</div>
+     <div id="div12">Hello User! </div>
+     <br><hr>
+
+     <h1>CallBack Funcion</h1>
+     <button id="button9">Make the heading disappear!</button>
+    <h1 id="head">Hidden</h1>  
+</body>
+</html>
